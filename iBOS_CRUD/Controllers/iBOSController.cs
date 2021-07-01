@@ -18,7 +18,7 @@ namespace iBOS_CRUD.Controllers
         public IActionResult Index()
         {
             var displaydata = _context.tblColdDrinks.ToList();
-            _context.tblColdDrinks.RemoveRange(_context.tblColdDrinks.Where(x => x.numQuantity <= 499));
+            _context.tblColdDrinks.RemoveRange(_context.tblColdDrinks.Where(x => x.numQuantity < 500));
             _context.SaveChanges();
             return View(displaydata);
         }
