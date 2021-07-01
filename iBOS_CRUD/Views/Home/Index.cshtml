@@ -1,0 +1,62 @@
+﻿@*@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Task For Dot Net Developer Intern</h1>
+</div>
+<br />
+<br />
+<button class="btn btn-primary" id="btnAdd" data-toggle="modal" data-target="#mdlAdd">
+    <i class="fas fa-plus"></i>
+    Add New
+</button>
+
+<br />
+<br />
+
+<div id="mdlAdd" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Add a new product</h4>
+                <button class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form enctype="multipart/form-data" id="addProduct">
+                    <label>intColdDrinksId</label>
+                    <input type="number" name="iBOS.intColdDrinksId" id="intColdDrinksId" required class="form-control" /><br />
+                    <label>strColdDrinksName</label>
+                    <input type="text" name="iBOS.strColdDrinksName" id="strColdDrinksName" required class="form-control" /><br />
+                    <label>numQuantity</label>
+                    <input type="number" name="iBOS.numQuantity" id="numQuantity" required class="form-control" /><br />
+                    <label>numUnitPrice</label>
+                    <input type="number" name="iBOS.numUnitPrice" id="numUnitPrice" required class="form-control" /><br />
+                    <button class="btn btn-success" id="addNewProduct">
+                        <i class="far fa-save"></i>
+                        Save
+                    </button>
+                    <button class="btn btn-danger" data-dismiss="modal">
+                        <i class="fas fa-times"></i>
+                        Close
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th style="text-align:center">intColdDrinksId</th>
+            <th style="text-align:center">strColdDrinksName</th>
+            <th style="text-align:center">numQuantity</th>
+            <th style="text-align:center">numUnitPrice</th>
+            <th style="text-align:center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>*@

@@ -1,0 +1,48 @@
+﻿@model iBOS_CRUD.Models.iBOS
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add a new product</h1>
+
+<h4>iBOS Limited</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="intColdDrinksId" class="control-label"></label>
+                <input asp-for="intColdDrinksId" class="form-control" />
+                <span asp-validation-for="intColdDrinksId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="strColdDrinksName" class="control-label"></label>
+                <input asp-for="strColdDrinksName" class="form-control" />
+                <span asp-validation-for="strColdDrinksName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numQuantity" class="control-label"></label>
+                <input asp-for="numQuantity" class="form-control" />
+                <span asp-validation-for="numQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numUnitPrice" class="control-label"></label>
+                <input asp-for="numUnitPrice" class="form-control" />
+                <span asp-validation-for="numUnitPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

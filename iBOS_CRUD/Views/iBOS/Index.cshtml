@@ -1,0 +1,63 @@
+﻿@model IEnumerable<iBOS_CRUD.Models.iBOS>
+
+@{
+    ViewData["Title"] = "iBOS Limited";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Task For Dot Net Developer Intern</h1>
+    <p style="text-align:center">Prepared by Md. Rohul Amin</p>
+</div>
+<br />
+<br />
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.intColdDrinksId)
+            </th>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.strColdDrinksName)
+            </th>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.numQuantity)
+            </th>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.numUnitPrice)
+            </th>
+            <th style="text-align:center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.intColdDrinksId)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.strColdDrinksName)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.numQuantity)
+                </td>
+                <td style="text-align:center">
+                    @Html.DisplayFor(modelItem => item.numUnitPrice)
+                </td>
+                <td style="text-align:center">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.intColdDrinksId }, new {@class = "btn btn-primary"}) |
+                    @Html.ActionLink("Details", "Details", new { id = item.intColdDrinksId }, new { @class = "btn btn-success" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.intColdDrinksId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div style="text-align:center">
+    Grand Total Price: @Model.Sum(i=>i.numQuantity*i.numUnitPrice)
+</div>
